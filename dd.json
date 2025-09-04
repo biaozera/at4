@@ -1,0 +1,34 @@
+{
+  "cadastrosreserva": [
+    {
+      "nome": "eu",
+      "dataen": "2025-12-31",
+      "id": "1",
+      "obs": "sem obs",
+      "email": "eu@eu.com",
+      "datasaida": "2025-12-31",
+      "adultosn": "2",
+      "criancasn": "3"
+    },
+    {
+      "nome": "eu",
+      "dataen": "2025-12-31",
+      "id": "2",
+      "obs": "sem obs",
+      "email": "eu@eu.com",
+      "datasaida": "2025-12-31",
+      "adultosn": "2",
+      "criancasn": "3"
+    },
+    {
+      "id": "448f",
+      "nome": "ddd",
+      "dataen": "2025-03-18",
+      "email": "dddd",
+      "datasaida": "2025-03-17",
+      "adultosn": "1",
+      "criancasn": "1",
+      "obs": "ddd"
+    }
+  ]
+}

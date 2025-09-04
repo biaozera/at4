@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>Solicitações de Reservas</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Data de Entrada</th>
+                    <th>Data de Saída</th>
+                    <th>Email</th>
+                    <th>Adultos</th>
+                    <th>Crianças</th>
+                    <th>Observações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaReservas">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        fetch('http://localhost:3000/cadastrosreserva')
+            .then(response => response.json())
+            .then(data => {
+                const tabela = document.getElementById('tabelaReservas');
+                
+                
+                data.forEach(reserva => {
+                    const tr = document.createElement('tr');
+                    
+                    tr.innerHTML = `
+                        <td>${reserva.id}</td>
+                        <td>${reserva.nome}</td>
+                        <td>${reserva.dataen}</td>
+                        <td>${reserva.datasaida}</td>
+                        <td>${reserva.email}</td>
+                        <td>${reserva.adultosn}</td>
+                        <td>${reserva.criancasn}</td>
+                        <td>${reserva.obs}</td>
+                    `;
+                    
+                    tabela.appendChild(tr);
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao carregar reservas:', error);
+            });
+    </script>
+
+<script src="./assets/bootstrap/umd/popper.min.js" ></script>
+<script src="./assets/bootstrap/js/bootstrap.min.js" ></script>
+<script src="./assets/bootstrap/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>
